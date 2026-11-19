@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1226c9" />
+    <meta
+      name="description"
+      content="Projektkalender der Funkstation &amp; Smart City Lindau: Termine, Workshops und Meilensteine des P-Seminars Physik."
+    />
+    <title>Projektkalender — Funkstation &amp; Smart City Lindau</title>
+    <link rel="icon" type="image/svg+xml" href="logoblue.svg" />
+    <link rel="stylesheet" href="assets/fonts/fonts.css" />
+    <link rel="stylesheet" href="assets/css/tokens.css" />
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/kalender.css" />
+    <script src="assets/js/site.js" defer></script>
+    <script src="assets/js/kalender.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Zum Kalender springen</a>
+
+    <header class="site-header">
+      <div class="shell site-header__inner">
+        <a class="brand" href="index.html">
+          <img class="brand__mark" src="logoblue.svg" width="44" height="44" alt="" />
+          <span>Funkstation &amp; Smart City Lindau</span>
+        </a>
+        <button class="btn nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menü</button>
+        <nav class="site-nav" id="site-nav" aria-label="Hauptnavigation">
+          <a href="index.html">Start</a>
+          <a href="lorawan.html">LoRaWAN</a>
+          <a href="funkstation.html">Funkstation</a>
+          <a href="ueber-uns.html">Über uns</a>
+          <a href="kalender.html" aria-current="page">Kalender</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="shell">
+      <header class="cal-head">
+        <div>
+          <p class="label">Projektkalender</p>
+          <h1 id="calendar-title">Kalender</h1>
+        </div>
+        <div class="cal-tools">
+          <div class="stepper">
+            <button type="button" class="btn btn--icon" id="prevMonth" aria-label="Vorheriger Monat">←</button>
+            <button type="button" class="btn" id="todayBtn">Heute</button>
+            <button type="button" class="btn btn--icon" id="nextMonth" aria-label="Nächster Monat">→</button>
+          </div>
+          <button type="button" class="btn btn--solid" id="addEvent">+ Termin</button>
+        </div>
+      </header>
+
+      <div class="cal-layout">
+        <section class="cal-panel" aria-labelledby="calendar-title">
+          <div class="calendar-grid" id="calendarGrid" role="grid" aria-labelledby="calendar-title"></div>
+          <div class="agenda" id="agenda" aria-label="Termine des Monats"></div>
+
+          <div class="legend" id="legend" aria-label="Kategorien filtern">
+            <button type="button" class="legend-btn" data-cat="sensor" aria-pressed="true">
+              <span class="swatch swatch--sensor" aria-hidden="true"></span>LoRaWAN-Gateway-System
+            </button>
+            <button type="button" class="legend-btn" data-cat="funk" aria-pressed="true">
+              <span class="swatch swatch--funk" aria-hidden="true"></span>Funkstation
+            </button>
+            <button type="button" class="legend-btn" data-cat="workshop" aria-pressed="true">
+              <span class="swatch swatch--workshop" aria-hidden="true"></span>Workshops &amp; Messungen
+            </button>
+            <button type="button" class="legend-btn" data-cat="milestone" aria-pressed="true">
+              <span class="swatch swatch--milestone" aria-hidden="true"></span>Meilensteine
+            </button>
+            <button type="button" class="legend-reset" id="resetFilters">Alle anzeigen</button>
+          </div>
+        </section>
+
+        <aside class="cal-rail" aria-label="Tagesdetails und nächste Termine">
+          <section class="focus-card" aria-labelledby="focus-label">
+            <p class="label" id="focus-label">Ausgewählter Tag</p>
+            <div class="focus-date">
+              <strong id="focusDay">—</strong>
+              <span id="focusMonth">Datum<br />wählen</span>
+            </div>
+            <p class="focus-meta" id="focusMeta">—</p>
+            <div class="focus-events" id="focusEvents"></div>
+          </section>
+
+          <section class="upcoming-block" aria-labelledby="upcoming-label">
+            <h2 class="label" id="upcoming-label">Nächste Termine</h2>
+            <ol class="upcoming" id="upcoming"></ol>
+          </section>
+        </aside>
+      </div>
+
+      <p class="storage-note" id="storageNote" role="status" hidden>
+        Globaler Speicher nicht erreichbar — Termine werden nur in diesem Browser gespeichert.
+      </p>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell site-footer__inner">
+        <div class="site-footer__about">
+          <p class="site-footer__title">Funkstation &amp; Smart City Lindau</p>
+          <p>P-Seminar Physik 2026/27 · Bodensee-Gymnasium Lindau</p>
+          <p class="site-footer__note">
+            Die Umsetzung hängt von Projektverlauf, technischer Machbarkeit und Finanzierung ab.
+          </p>
+        </div>
+        <nav aria-label="Projekt">
+          <p class="label">Projekt</p>
+          <ul>
+            <li><a href="lorawan.html">LoRaWAN-Gateway-System</a></li>
+            <li><a href="funkstation.html">Funkstation</a></li>
+            <li><a href="ueber-uns.html">Über uns</a></li>
+            <li><a href="kalender.html">Kalender</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Rechtliches">
+          <p class="label">Rechtliches</p>
+          <ul>
+            <li><a href="impressum.html">Impressum</a></li>
+            <li><a href="datenschutz.html">Datenschutz</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+
+    <dialog class="event-dialog" id="eventDialog" aria-labelledby="dialogTitle">
+      <form id="eventForm">
+        <div class="dialog-head">
+          <div>
+            <p class="label">Kalendereintrag</p>
+            <h2 id="dialogTitle">Neuer Termin</h2>
+          </div>
+          <button type="button" class="dialog-close" id="dialogClose" aria-label="Dialog schließen">×</button>
+        </div>
+        <div class="dialog-body">
+          <label class="field">
+            <span>Datum</span>
+            <input type="date" name="date" id="eventDate" required />
+          </label>
+          <div class="field-row">
+            <label class="field">
+              <span>Zeit</span>
+              <input type="time" name="time" id="eventTime" value="12:00" required />
+            </label>
+            <label class="field">
+              <span>Kategorie</span>
+              <select name="category" id="eventCategory">
+                <option value="sensor">LoRaWAN-Gateway-System</option>
+                <option value="funk">Funkstation</option>
+                <option value="workshop" selected>Workshops &amp; Messungen</option>
+                <option value="milestone">Meilensteine</option>
+              </select>
+            </label>
+          </div>
+          <label class="field">
+            <span>Titel</span>
+            <input type="text" name="title" id="eventTitle" maxlength="64" placeholder="z. B. Gateway-Reichweitentest" required />
+          </label>
+          <label class="field">
+            <span>Notiz <em>optional</em></span>
+            <textarea name="note" id="eventNote" rows="3" maxlength="220" placeholder="Kurzbeschreibung, Treffpunkt oder offene Punkte"></textarea>
+          </label>
+          <p class="dialog-note">
+            Einträge werden zentral gespeichert und sind für alle Besucher sichtbar.
+          </p>
+        </div>
+        <div class="dialog-actions">
+          <button type="button" class="btn" id="dialogCancel">Abbrechen</button>
+          <button type="submit" class="btn btn--primary">Termin speichern</button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog
+      class="event-dialog confirm-dialog"
+      id="confirmDialog"
+      aria-labelledby="confirmTitle"
+      aria-describedby="confirmText"
+    >
+      <div class="dialog-head">
+        <div>
+          <p class="label">Kalendereintrag</p>
+          <h2 id="confirmTitle">Termin löschen?</h2>
+        </div>
+        <button type="button" class="dialog-close" id="confirmClose" aria-label="Dialog schließen">×</button>
+      </div>
+      <div class="dialog-body">
+        <p class="confirm-text" id="confirmText"></p>
+      </div>
+      <div class="dialog-actions">
+        <button type="button" class="btn" id="confirmCancel" autofocus>Abbrechen</button>
+        <button type="button" class="btn btn--danger" id="confirmDelete">Löschen</button>
+      </div>
+    </dialog>
+  </body>
+</html>

@@ -1,0 +1,284 @@
+/* ==========================================================================
+   Inhalt — Seitenkopf, Leitung mit Abschnitten und die Bausteine darin.
+   Für Startseite, Projektseiten, „Über uns" und die Rechtstexte.
+   ========================================================================== */
+
+:root {
+  /* Abstand der Leitung zur rechten Kante. Rechts davon stehen die Rubriken. */
+  --gutter: 220px;
+}
+
+/* --------------------------------------------------------------------------
+   Seitenkopf der Unterseiten
+   -------------------------------------------------------------------------- */
+
+.page-head {
+  padding-block: var(--space-8) var(--space-7);
+}
+
+.page-head h1 {
+  max-width: 16ch;
+  margin-top: var(--space-4);
+}
+
+.page-head .lead,
+.page-head .btn-row {
+  margin-top: var(--space-5);
+}
+
+/* --------------------------------------------------------------------------
+   Leitung: eine Linie am rechten Rand, die beim Scrollen mitwächst.
+   site.js setzt --progress (0 bis 1) auf .track.
+   -------------------------------------------------------------------------- */
+
+.track {
+  position: relative;
+}
+
+.track__line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: var(--gutter);
+  width: 1px;
+  background: var(--line);
+}
+
+.track__fill {
+  position: absolute;
+  inset: 0 -1px;
+  background: var(--paper);
+  transform: scaleY(var(--progress, 0));
+  transform-origin: top;
+}
+
+.section {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) var(--gutter);
+  padding-block: var(--space-8);
+  border-top: 1px solid var(--line-soft);
+}
+
+/* Knoten auf der Leitung, auf Höhe der Rubrik. */
+.section::before {
+  content: "";
+  position: absolute;
+  top: calc(var(--space-8) + 5px);
+  right: calc(var(--gutter) - 4px);
+  width: 9px;
+  height: 9px;
+  background: var(--signal);
+}
+
+.section__label {
+  grid-column: 2;
+  grid-row: 1;
+  padding-left: var(--space-5);
+}
+
+.section__body {
+  grid-column: 1;
+  grid-row: 1;
+  padding-right: var(--space-7);
+}
+
+.section__body > * + * {
+  margin-top: var(--space-5);
+}
+
+.section__body > h2 + * {
+  margin-top: var(--space-5);
+}
+
+.section__body > p {
+  max-width: var(--measure);
+  color: var(--text-soft);
+}
+
+.section__body > p.lead {
+  color: var(--text);
+}
+
+@media (max-width: 860px) {
+  :root {
+    --gutter: 0px;
+  }
+
+  .track {
+    padding-left: var(--space-5);
+  }
+
+  .track__line {
+    right: auto;
+    left: 0;
+  }
+
+  .section {
+    display: block;
+    padding-block: var(--space-7);
+  }
+
+  .section::before {
+    top: calc(var(--space-7) + 5px);
+    right: auto;
+    left: calc(-1 * var(--space-5) - 4px);
+  }
+
+  .section__label {
+    margin-bottom: var(--space-4);
+    padding-left: 0;
+  }
+
+  .section__body {
+    padding-right: 0;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Bausteine
+   -------------------------------------------------------------------------- */
+
+/* Begriff links, Erklärung rechts — für Messgrößen, Ziele, Eckdaten. */
+.fact-list {
+  max-width: 760px;
+  border-top: 1px solid var(--line);
+}
+
+.fact-list > div {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  gap: var(--space-5);
+  padding-block: var(--space-4);
+  border-bottom: 1px solid var(--line);
+}
+
+.fact-list dt {
+  font-weight: 700;
+}
+
+.fact-list dd {
+  color: var(--text-soft);
+}
+
+/* Nummerierte Schritte, z. B. der Weg der Daten. */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--space-4);
+  counter-reset: step;
+}
+
+.steps li {
+  padding: var(--space-5);
+  border: 1px solid var(--line);
+  counter-increment: step;
+}
+
+.steps li::before {
+  content: counter(step);
+  display: block;
+  margin-bottom: var(--space-4);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--signal);
+}
+
+.steps strong {
+  display: block;
+  font-size: var(--text-lg);
+  line-height: 1.2;
+}
+
+.steps span {
+  display: block;
+  margin-top: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--text-soft);
+}
+
+/* Kacheln für kurze, gleichrangige Punkte. */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-4);
+}
+
+.card {
+  padding: var(--space-5);
+  border: 1px solid var(--line);
+  background: var(--blue-deep);
+}
+
+.card p {
+  margin-top: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--text-soft);
+}
+
+/* Hinweis mit gelber Kante: Einschränkungen und Vorbehalte. */
+.notice {
+  max-width: var(--measure);
+  padding: var(--space-4) var(--space-5);
+  border-left: 3px solid var(--signal);
+  background: var(--blue-deep);
+  font-size: var(--text-sm);
+}
+
+.bullets {
+  max-width: var(--measure);
+  color: var(--text-soft);
+}
+
+.bullets li {
+  position: relative;
+  padding-left: var(--space-5);
+}
+
+.bullets li + li {
+  margin-top: var(--space-2);
+}
+
+.bullets li::before {
+  content: "";
+  position: absolute;
+  top: 0.62em;
+  left: 0;
+  width: 8px;
+  height: 2px;
+  background: var(--paper);
+}
+
+@media (max-width: 560px) {
+  .fact-list > div {
+    grid-template-columns: 1fr;
+    gap: var(--space-1);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Fließtext der Rechtstexte
+   -------------------------------------------------------------------------- */
+
+.prose {
+  max-width: var(--measure);
+}
+
+.prose section {
+  padding-block: var(--space-6);
+  border-top: 1px solid var(--line-soft);
+}
+
+.prose h2 {
+  font-size: var(--text-xl);
+  letter-spacing: -0.01em;
+}
+
+.prose h2 ~ * {
+  margin-top: var(--space-4);
+}
+
+.prose p,
+.prose address {
+  color: var(--text-soft);
+}

@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1226c9" />
+    <meta
+      name="description"
+      content="Projekt 1 des P-Seminars Physik am Bodensee-Gymnasium Lindau: Sensoren, ein LoRaWAN-Gateway für The Things Network und offene Messdaten."
+    />
+    <title>LoRaWAN-Gateway-System — Funkstation &amp; Smart City Lindau</title>
+    <link rel="icon" type="image/svg+xml" href="logoblue.svg" />
+    <link rel="stylesheet" href="assets/fonts/fonts.css" />
+    <link rel="stylesheet" href="assets/css/tokens.css" />
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/content.css" />
+    <script src="assets/js/site.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+    <header class="site-header">
+      <div class="shell site-header__inner">
+        <a class="brand" href="index.html">
+          <img class="brand__mark" src="logoblue.svg" width="44" height="44" alt="" />
+          <span>Funkstation &amp; Smart City Lindau</span>
+        </a>
+        <button class="btn nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menü</button>
+        <nav class="site-nav" id="site-nav" aria-label="Hauptnavigation">
+          <a href="index.html">Start</a>
+          <a href="lorawan.html" aria-current="page">LoRaWAN</a>
+          <a href="funkstation.html">Funkstation</a>
+          <a href="ueber-uns.html">Über uns</a>
+          <a href="kalender.html">Kalender</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="shell">
+      <header class="page-head">
+        <p class="label">Projekt 1 · Smart City</p>
+        <h1>LoRaWAN-Gateway-System</h1>
+        <p class="lead">
+          Sensoren in Lindau messen Umweltdaten und senden sie per Funk an ein Gateway auf dem Schulgelände. Von dort gelangen die Werte ins Internet, wo sie alle einsehen können.
+        </p>
+      </header>
+
+      <div class="track">
+        <div class="track__line" aria-hidden="true"><span class="track__fill"></span></div>
+
+        <section class="section" aria-labelledby="weg-title">
+          <p class="label section__label">Funktionsweise</p>
+          <div class="section__body">
+            <h2 id="weg-title">Vom Sensor ins Web</h2>
+            <p class="lead">
+              Das System besteht aus vier Teilen. Jeder Messwert nimmt denselben Weg.
+            </p>
+            <ol class="steps">
+              <li><strong>Sensor</strong><span>misst und sendet den Wert per LoRaWAN</span></li>
+              <li><strong>Gateway</strong><span>empfängt die Funksignale auf dem Schulgelände</span></li>
+              <li><strong>The Things Network</strong><span>leitet die Daten ins Internet weiter</span></li>
+              <li><strong>Webserver</strong><span>speichert die Werte und stellt sie dar</span></li>
+            </ol>
+          </div>
+        </section>
+
+        <section class="section" aria-labelledby="sensoren-title">
+          <p class="label section__label">Sensoren</p>
+          <div class="section__body">
+            <h2 id="sensoren-title">Was wir messen</h2>
+            <p class="lead">
+              Wir entwickeln Sensoren, stellen sie auf und betreiben sie. Ein Schwerpunkt ist das Wasser des Bodensees.
+            </p>
+            <dl class="fact-list">
+              <div>
+                <dt>Wasser</dt>
+                <dd>Wasserstand und Wasserparameter des Bodensees</dd>
+              </div>
+              <div>
+                <dt>Luftqualität</dt>
+                <dd>zum Beispiel Feinstaub</dd>
+              </div>
+              <div>
+                <dt>Klima</dt>
+                <dd>Temperatur und Luftfeuchtigkeit</dd>
+              </div>
+              <div>
+                <dt>Licht</dt>
+                <dd>Helligkeit</dd>
+              </div>
+              <div>
+                <dt>Lärm</dt>
+                <dd>Geräuschpegel</dd>
+              </div>
+            </dl>
+            <p>
+              Für die Seeforschung besteht bereits Kontakt zum Institut für Seenforschung in Langenargen. Weitere Messungen sollen sich nach dem Bedarf der Stadt Lindau und des Landkreises richten.
+            </p>
+          </div>
+        </section>
+
+        <section class="section" aria-labelledby="gateway-title">
+          <p class="label section__label">Gateway</p>
+          <div class="section__body">
+            <h2 id="gateway-title">Ein offenes Netz für die Region</h2>
+            <p class="lead">
+              Auf dem Schulgelände entsteht ein Gateway für The Things Network (TTN).
+            </p>
+            <p>
+              TTN ist ein gemeinschaftlich betriebenes Netz, über das LoRaWAN-Sensoren ihre Daten ins Internet übertragen. Unser Gateway ist ein öffentlicher Zugangspunkt: Auch andere Menschen, Schulen und Organisationen in der Region können ihre Sensoren darüber anbinden.
+            </p>
+            <p>
+              Je nach Projektverlauf sind weitere Gateway-Standorte denkbar.
+            </p>
+          </div>
+        </section>
+
+        <section class="section" aria-labelledby="technik-title">
+          <p class="label section__label">Technik</p>
+          <div class="section__body">
+            <h2 id="technik-title">Warum LoRaWAN</h2>
+            <div class="card-grid">
+              <div class="card">
+                <h3>Große Reichweite</h3>
+                <p>Die Funksignale überbrücken größere Entfernungen.</p>
+              </div>
+              <div class="card">
+                <h3>Wenig Energie</h3>
+                <p>Die Übertragung ist energiesparend.</p>
+              </div>
+              <div class="card">
+                <h3>Offen</h3>
+                <p>Über The Things Network für alle nutzbar.</p>
+              </div>
+            </div>
+            <div class="btn-row">
+              <a class="btn" href="funkstation.html">Weiter zu Projekt 2: Funkstation</a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell site-footer__inner">
+        <div class="site-footer__about">
+          <p class="site-footer__title">Funkstation &amp; Smart City Lindau</p>
+          <p>P-Seminar Physik 2026/27 · Bodensee-Gymnasium Lindau</p>
+          <p class="site-footer__note">
+            Die Umsetzung hängt von Projektverlauf, technischer Machbarkeit und Finanzierung ab.
+          </p>
+        </div>
+        <nav aria-label="Projekt">
+          <p class="label">Projekt</p>
+          <ul>
+            <li><a href="lorawan.html">LoRaWAN-Gateway-System</a></li>
+            <li><a href="funkstation.html">Funkstation</a></li>
+            <li><a href="ueber-uns.html">Über uns</a></li>
+            <li><a href="kalender.html">Kalender</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Rechtliches">
+          <p class="label">Rechtliches</p>
+          <ul>
+            <li><a href="impressum.html">Impressum</a></li>
+            <li><a href="datenschutz.html">Datenschutz</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

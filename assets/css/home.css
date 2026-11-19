@@ -1,0 +1,131 @@
+/* ==========================================================================
+   Startseite — Hero mit Antenne und die beiden Projekte.
+   ========================================================================== */
+
+:root {
+  /* Die Antennenskizze ist 618 px breit, ihr Mast steht bei x = 282,19.
+     Mit diesen Werten sitzt der Mast genau auf der Leitung darunter. */
+  --antenna-scale: 0.6;
+  --antenna-width: calc(618px * var(--antenna-scale));
+  --mast-x: calc(282.19px * var(--antenna-scale));
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) calc(var(--mast-x) + var(--gutter));
+  column-gap: var(--space-6);
+}
+
+.hero__copy {
+  padding-block: var(--space-8);
+}
+
+.hero h1 {
+  margin-top: var(--space-4);
+  font-size: var(--text-hero);
+}
+
+.hero .lead {
+  margin-top: var(--space-5);
+}
+
+.hero .btn-row {
+  margin-top: var(--space-6);
+}
+
+/* Skizze oben, darunter verlängert ein Strich den Mast bis zur Leitung. */
+.hero__antenna {
+  display: flex;
+  flex-direction: column;
+  width: var(--antenna-width);
+  padding-top: var(--space-8);
+  color: var(--paper);
+}
+
+.hero__antenna::after {
+  content: "";
+  flex: 1;
+  width: 3px;
+  margin-left: calc(var(--mast-x) - 2px);
+  background: currentColor;
+}
+
+@media (max-width: 860px) {
+  .hero {
+    display: block;
+  }
+
+  .hero__copy {
+    padding-block: var(--space-7);
+  }
+
+  .hero__antenna {
+    display: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Die zwei Projekte
+   -------------------------------------------------------------------------- */
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-5);
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-6);
+  border: 1px solid var(--line);
+  background: var(--blue-deep);
+  text-decoration: none;
+  transition:
+    border-color var(--dur) var(--ease),
+    background var(--dur) var(--ease);
+}
+
+.project:hover {
+  border-color: var(--paper);
+  background: var(--blue-light);
+}
+
+.project h3 {
+  margin-top: var(--space-3);
+  font-size: var(--text-2xl);
+  font-weight: 900;
+  font-stretch: 110%;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  hyphens: auto;
+}
+
+.project p {
+  margin-top: var(--space-4);
+  color: var(--text-soft);
+}
+
+.project .bullets {
+  margin-block: var(--space-5) var(--space-6);
+  font-size: var(--text-sm);
+}
+
+.project__more {
+  margin-top: auto;
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--line);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--paper);
+}
+
+@media (max-width: 1000px) {
+  .projects {
+    grid-template-columns: 1fr;
+  }
+}

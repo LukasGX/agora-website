@@ -1,0 +1,57 @@
+/* ==========================================================================
+   Design-Tokens — Funkstation & Smart City Lindau
+   Farben, Schrift, Abstände und Maße für alle Seiten.
+   ========================================================================== */
+
+:root {
+  /* Farbe: Blau ist die Fläche, Papier die Schrift, Gelb nur der Akzent. */
+  --blue: #1226c9;
+  --blue-deep: #0c1a96;
+  --blue-light: #2f45e0;
+  --paper: #f2f0e7;
+  --paper-dim: #e4e1d5;
+  --ink: #0a0a0b;
+  --muted: #5e5d57;
+  --signal: #e9ff00;
+  --lavender: #cfd8ff;
+  --danger: #c4281c;
+
+  --text: var(--paper);
+  --text-soft: rgba(242, 240, 231, 0.84);
+  --line: rgba(242, 240, 231, 0.3);
+  --line-soft: rgba(242, 240, 231, 0.16);
+
+  /* Schrift */
+  --font-display: "Archivo", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", "Cascadia Mono", Consolas, monospace;
+
+  --text-xs: 13px;
+  --text-sm: 15px;
+  --text-base: 17px;
+  --text-lg: 20px;
+  --text-xl: clamp(22px, 2vw, 26px);
+  --text-2xl: clamp(28px, 3.4vw, 42px);
+  --text-3xl: clamp(38px, 5.6vw, 72px);
+  --text-hero: clamp(42px, 6.6vw, 92px);
+
+  /* Abstände: eine Skala, keine Einzelwerte in den Komponenten. */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 72px;
+  --space-9: 112px;
+
+  /* Maße */
+  --shell: 1200px;
+  --page-pad: clamp(20px, 4vw, 40px);
+  --measure: 66ch;
+  --control: 46px;
+
+  /* Bewegung */
+  --ease: cubic-bezier(0.22, 0.68, 0.16, 1);
+  --dur: 180ms;
+}
