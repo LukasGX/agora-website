@@ -17,7 +17,7 @@
     <script src="assets/js/site.js" defer></script>
     <script src="assets/js/kalender.js" defer></script>
   </head>
-  <body>
+  <body class="page-wide">
     <a class="skip-link" href="#main">Zum Kalender springen</a>
 
     <header class="site-header">
@@ -53,26 +53,27 @@
         </div>
       </header>
 
+        <div class="legend" id="legend" aria-label="Kategorien filtern">
+          <button type="button" class="legend-btn" data-cat="sensor" aria-pressed="true">
+            <span class="swatch swatch--sensor" aria-hidden="true"></span>LoRaWAN-Gateway-System
+          </button>
+          <button type="button" class="legend-btn" data-cat="funk" aria-pressed="true">
+            <span class="swatch swatch--funk" aria-hidden="true"></span>Funkstation
+          </button>
+          <button type="button" class="legend-btn" data-cat="workshop" aria-pressed="true">
+            <span class="swatch swatch--workshop" aria-hidden="true"></span>Workshops &amp; Messungen
+          </button>
+          <button type="button" class="legend-btn" data-cat="milestone" aria-pressed="true">
+            <span class="swatch swatch--milestone" aria-hidden="true"></span>Meilensteine
+          </button>
+          <button type="button" class="legend-reset" id="resetFilters">Alle anzeigen</button>
+        </div>
+
       <div class="cal-layout">
         <section class="cal-panel" aria-labelledby="calendar-title">
           <div class="calendar-grid" id="calendarGrid" role="grid" aria-labelledby="calendar-title"></div>
           <div class="agenda" id="agenda" aria-label="Termine des Monats"></div>
 
-          <div class="legend" id="legend" aria-label="Kategorien filtern">
-            <button type="button" class="legend-btn" data-cat="sensor" aria-pressed="true">
-              <span class="swatch swatch--sensor" aria-hidden="true"></span>LoRaWAN-Gateway-System
-            </button>
-            <button type="button" class="legend-btn" data-cat="funk" aria-pressed="true">
-              <span class="swatch swatch--funk" aria-hidden="true"></span>Funkstation
-            </button>
-            <button type="button" class="legend-btn" data-cat="workshop" aria-pressed="true">
-              <span class="swatch swatch--workshop" aria-hidden="true"></span>Workshops &amp; Messungen
-            </button>
-            <button type="button" class="legend-btn" data-cat="milestone" aria-pressed="true">
-              <span class="swatch swatch--milestone" aria-hidden="true"></span>Meilensteine
-            </button>
-            <button type="button" class="legend-reset" id="resetFilters">Alle anzeigen</button>
-          </div>
         </section>
 
         <aside class="cal-rail" aria-label="Tagesdetails und nächste Termine">

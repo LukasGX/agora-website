@@ -17,17 +17,23 @@
    Kopf: Monat, Blättern, neuer Termin
    -------------------------------------------------------------------------- */
 
+/* Breite Seite: das Raster braucht mehr Platz als der Textsatz der anderen Seiten. */
+.page-wide {
+  --shell: 1560px;
+}
+
 .cal-head {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-end;
   justify-content: space-between;
   gap: var(--space-5);
-  padding-block: var(--space-7) var(--space-6);
+  padding-block: var(--space-6) var(--space-5);
 }
 
 .cal-head h1 {
-  margin-top: var(--space-3);
+  margin-top: var(--space-2);
+  font-size: var(--text-2xl);
 }
 
 .cal-tools {
@@ -56,7 +62,7 @@
 
 .cal-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 320px;
+  grid-template-columns: minmax(0, 1fr) 360px;
   gap: var(--space-5);
   align-items: start;
 }
@@ -66,7 +72,10 @@
   color: var(--ink);
 }
 
+/* Bleibt beim Scrollen im Bild, damit Tagesdetails neben dem Raster stehen. */
 .cal-rail {
+  position: sticky;
+  top: var(--space-5);
   display: grid;
   gap: var(--space-5);
 }
@@ -75,9 +84,15 @@
    Monatsraster
    -------------------------------------------------------------------------- */
 
+/* Alle sechs Wochen gleich hoch, auch wenn eine Woche mehr Termine hat. */
+.calendar-grid {
+  display: grid;
+  grid-template-rows: auto repeat(6, minmax(140px, 1fr));
+}
+
 .week-row {
   display: grid;
-  grid-template-columns: 64px repeat(7, minmax(0, 1fr));
+  grid-template-columns: 72px repeat(7, minmax(0, 1fr));
   border-bottom: 1px solid var(--rule);
 }
 
@@ -115,7 +130,6 @@
   flex-direction: column;
   gap: var(--space-2);
   min-width: 0;
-  min-height: 116px;
   padding: var(--space-2);
   border-left: 1px solid var(--rule);
   cursor: pointer;
@@ -182,10 +196,10 @@
    Termine: Kategorie = Füllfarbe
    -------------------------------------------------------------------------- */
 
-/* Uhrzeit über dem Titel: so bleibt in der schmalen Tagesspalte Platz für Text. */
 .event {
-  display: grid;
+  display: block;
   width: 100%;
+  min-width: 0;
   padding: var(--space-1) var(--space-2);
   border: 0;
   font-family: var(--font-display);
@@ -196,18 +210,20 @@
   cursor: pointer;
 }
 
+/* Die Uhrzeit steht in Tooltip, Seitenleiste und Terminliste; im Raster bleibt Platz für den Titel. */
 .event-time {
-  font-family: var(--font-mono);
-  font-weight: 500;
+  display: none;
 }
 
 .event-title {
   display: -webkit-box;
+  min-width: 0;
   overflow: hidden;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   line-clamp: 2;
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .event--sensor {
@@ -254,8 +270,8 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: var(--space-2) var(--space-5);
-  padding: var(--space-4);
+  gap: 0 var(--space-5);
+  margin-bottom: var(--space-4);
 }
 
 .legend-btn,
@@ -267,7 +283,7 @@
   padding: 0;
   border: 0;
   background: none;
-  color: var(--ink);
+  color: var(--paper);
   font-family: var(--font-mono);
   font-size: var(--text-xs);
   font-weight: 500;
@@ -275,12 +291,12 @@
 }
 
 .legend-btn[aria-pressed="false"] {
-  color: var(--muted);
+  color: var(--text-soft);
   text-decoration: line-through;
 }
 
 .legend-btn[aria-pressed="false"] .swatch {
-  opacity: 0.3;
+  opacity: 0.35;
 }
 
 .legend-reset {
@@ -289,14 +305,10 @@
   text-underline-offset: 0.25em;
 }
 
-.legend :focus-visible {
-  outline-color: var(--blue);
-}
-
 .swatch {
   width: 16px;
   height: 16px;
-  border: 1px solid var(--ink);
+  border: 1px solid var(--paper);
 }
 
 .swatch--sensor {
@@ -539,19 +551,34 @@
   padding: var(--space-3);
 }
 
-@media (max-width: 1000px) {
+/* Unter 1200 px steht die Seitenleiste unter dem Raster statt es einzuengen. */
+@media (max-width: 1200px) {
   .cal-layout {
     grid-template-columns: 1fr;
+  }
+
+  .cal-rail {
+    position: static;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
   }
 }
 
 @media (max-width: 720px) {
+  .cal-rail {
+    grid-template-columns: 1fr;
+  }
+
   .calendar-grid {
     display: none;
   }
 
   .agenda {
     display: block;
+  }
+
+  .legend {
+    gap: 0 var(--space-4);
   }
 
   .legend-reset {
