@@ -151,6 +151,10 @@ class CalendarHandler(SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs) -> None:
         super().__init__(*args, directory=str(ROOT), **kwargs)
 
+    def log_message(self, format: str, *args) -> None:
+        """Log requests without the client IP address (see datenschutz.html)."""
+        sys.stderr.write(f"[{self.log_date_time_string()}] {format % args}\n")
+
     def end_headers(self) -> None:
         if self.path.startswith("/api/"):
             self.send_header("Cache-Control", "no-store")
