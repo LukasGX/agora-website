@@ -4,15 +4,45 @@ Projektseite des P-Seminars Physik 2026/27 am Bodensee-Gymnasium Lindau.
 
 Das Seminar (16 Schülerinnen und Schüler der 11. Jahrgangsstufe) baut zwei Projekte:
 
-1. **LoRaWAN-Gateway-System** – Sensoren messen Umweltdaten (Bodenseewasser, Luftqualität,
+1. **LoRaWAN Gateway System** – Sensoren messen Umweltdaten (Bodenseewasser, Luftqualität,
    Temperatur, Luftfeuchtigkeit, Licht, Lärm) und senden sie per LoRaWAN an ein Gateway auf dem
    Schulgelände. Das Gateway hängt am The Things Network und steht auch anderen in der Region
    offen. Die Messwerte werden über einen Webserver veröffentlicht.
 2. **Funkstation** – eine Station mit Funkgeräten und Antennen auf dem Schulgelände, mit WebSDR
-   (Funkempfang im Browser) und geplanten Funkkontakten zu Neumayer III, Polarstern und zur ISS.
+   (Funkempfang im Browser), Satellitenfunk und geplanten Funkkontakten zu Neumayer III,
+   Polarstern und zur ISS.
 
-Fachlich unterstützt der Deutsche Amateur-Radio-Club (DARC) e. V. Die Umsetzung hängt von
-Projektverlauf, technischer Machbarkeit und Finanzierung ab.
+Die Umsetzung hängt von Projektverlauf, technischer Machbarkeit und Finanzierung ab.
+
+## Partner und Stand
+
+| Partner | Stand |
+|---|---|
+| Deutscher Amateur-Radio-Club (DARC) e. V. | Fachliche Unterstützung |
+| Institut für Seenforschung, Langenargen | Kontakt für die Messungen am See |
+| Rose Plastic | Unterstützung zugesagt. Wunsch: Gehäuse für die Sensoren. Der Umfang hängt von unserer Kostenaufstellung ab. |
+| JT-elektronik GmbH, Lindau | Positive Rückmeldung, persönliches Gespräch als nächster Schritt |
+
+JT-elektronik entwickelt und fertigt Inspektions- und Messsysteme (Kameratechnik, Sensorik,
+Elektronik, Steuerungen, Messdatenverarbeitung). Mögliche Unterstützung:
+
+- elektronische Bauteile, Kabel, Steckverbindungen oder Leiterplatten
+- Beratung beim Anschluss der Sensoren an einen Mikrocontroller
+- Hilfe bei Verarbeitung und Übertragung der Messdaten
+- Beratung zu wetterfesten Gehäusen und Stromversorgung der Messkästen
+- fachliche Betreuung durch einen Mitarbeiter
+- eine eigene Platine für den Satellitenfunk
+
+### Offene Punkte
+
+- **Kostenaufstellung** erstellen. Rose Plastic und JT-elektronik brauchen eine konkrete Liste,
+  um sagen zu können, wobei sie helfen.
+- **Plan für JT-elektronik**: was wir bauen wollen und welche Materialien wir brauchen. Am besten
+  mit einem konkreten Anwendungsfall, der vorher mitgeteilt wird.
+- **Besuche vor Ort** bei beiden Firmen, auch zur Berufsorientierung. Bei Rose Plastic die
+  Fertigung ansehen; eventuell eigene Gehäuse modellieren und dort fertigen.
+- **Satellitenfunk** wird ein größeres Entwicklungsprojekt (Software Defined Radio ADALM Pluto,
+  eventuell eigene Platine).
 
 ## Seiten
 
@@ -38,6 +68,7 @@ assets/css/kalender.css   Kalender
 assets/js/site.js         Mobiles Menü, mitwachsende Leitung
 assets/js/kalender.js     Kalenderlogik
 assets/fonts/             Archivo und IBM Plex Mono, lokal ausgeliefert
+assets/img/team.jpg       Teamfoto (ohne Metadaten)
 server.py                 Statischer Server und Kalender-API
 ```
 
