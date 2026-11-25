@@ -389,3 +389,20 @@
 .prose address {
   color: var(--text-soft);
 }
+
+/* --------------------------------------------------------------------------
+   Foto mit Bildunterschrift
+   -------------------------------------------------------------------------- */
+
+.photo img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-2xl);
+}
+
+.photo figcaption {
+  margin-top: var(--space-100);
+  font-size: var(--text-sm);
+  line-height: var(--leading-sm);
+  color: var(--text-soft);
+}
