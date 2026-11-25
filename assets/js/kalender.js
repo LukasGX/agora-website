@@ -27,7 +27,7 @@
   const WEEKDAYS_SHORT = ["So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"];
 
   const CATEGORIES = {
-    sensor: { label: "LoRaWAN-Gateway-System", short: "LoRaWAN" },
+    sensor: { label: "LoRaWAN Gateway System", short: "LoRaWAN" },
     funk: { label: "Funkstation", short: "Funkstation" },
     workshop: { label: "Workshops & Messungen", short: "Workshop" },
     milestone: { label: "Meilensteine", short: "Meilenstein" },

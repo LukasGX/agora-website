@@ -20,12 +20,14 @@
     <a class="skip-link" href="#main">Zum Inhalt springen</a>
 
     <header class="site-header">
-      <div class="shell site-header__inner">
+      <div class="site-header__inner">
         <a class="brand" href="index.html">
-          <img class="brand__mark" src="logoblue.svg" width="44" height="44" alt="" />
+          <img class="brand__mark" src="logoblue.svg" width="32" height="32" alt="" />
           <span>Funkstation &amp; Smart City Lindau</span>
         </a>
-        <button class="btn nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menü</button>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menü öffnen">
+          <span></span><span></span>
+        </button>
         <nav class="site-nav" id="site-nav" aria-label="Hauptnavigation">
           <a href="index.html">Start</a>
           <a href="lorawan.html">LoRaWAN</a>
@@ -50,7 +52,7 @@
 
         <section class="section" aria-labelledby="team-title">
           <p class="label section__label">Team</p>
-          <div class="section__body">
+          <div class="section__body" data-reveal>
             <h2 id="team-title">16 Schülerinnen und Schüler</h2>
             <p class="lead">
               Wir planen die Anlagen, bauen Sensoren, löten Antennen, schreiben Software und dokumentieren unsere Arbeit.
@@ -70,7 +72,7 @@
               </div>
               <div>
                 <dt>Projekte</dt>
-                <dd><a href="lorawan.html">LoRaWAN-Gateway-System</a> und <a href="funkstation.html">Funkstation</a></dd>
+                <dd><a href="lorawan.html">LoRaWAN Gateway System</a> und <a href="funkstation.html">Funkstation</a></dd>
               </div>
             </dl>
           </div>
@@ -78,7 +80,7 @@
 
         <section class="section" aria-labelledby="partner-title">
           <p class="label section__label">Unterstützung</p>
-          <div class="section__body">
+          <div class="section__body" data-reveal>
             <h2 id="partner-title">Wer uns hilft</h2>
             <div class="card-grid">
               <div class="card">
@@ -102,7 +104,7 @@
 
         <section class="section" aria-labelledby="kontakt-title">
           <p class="label section__label">Kontakt</p>
-          <div class="section__body">
+          <div class="section__body" data-reveal>
             <h2 id="kontakt-title">Schreiben Sie uns</h2>
             <p class="lead">
               Sie möchten das Projekt unterstützen oder haben Fragen? Sie erreichen uns über das Sekretariat des Bodensee-Gymnasiums.
@@ -128,7 +130,7 @@
         <nav aria-label="Projekt">
           <p class="label">Projekt</p>
           <ul>
-            <li><a href="lorawan.html">LoRaWAN-Gateway-System</a></li>
+            <li><a href="lorawan.html">LoRaWAN Gateway System</a></li>
             <li><a href="funkstation.html">Funkstation</a></li>
             <li><a href="ueber-uns.html">Über uns</a></li>
             <li><a href="kalender.html">Kalender</a></li>

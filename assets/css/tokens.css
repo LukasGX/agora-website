@@ -1,6 +1,6 @@
 /* ==========================================================================
    Design-Tokens — Funkstation & Smart City Lindau
-   Farben, Schrift, Abstände und Maße für alle Seiten.
+   Farben, Schriftgrößen (Tailwind-Skala), Abstände, Radien und Bewegung.
    ========================================================================== */
 
 :root {
@@ -18,40 +18,71 @@
 
   --text: var(--paper);
   --text-soft: rgba(242, 240, 231, 0.84);
+  --text-muted: rgba(242, 240, 231, 0.3);
   --line: rgba(242, 240, 231, 0.3);
   --line-soft: rgba(242, 240, 231, 0.16);
+  --glass: rgba(12, 26, 150, 0.72);
 
   /* Schrift */
   --font-display: "Archivo", "Segoe UI", system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", "Cascadia Mono", Consolas, monospace;
 
-  --text-xs: 13px;
-  --text-sm: 15px;
-  --text-base: 17px;
-  --text-lg: 20px;
-  --text-xl: clamp(22px, 2vw, 26px);
-  --text-2xl: clamp(28px, 3.4vw, 42px);
-  --text-3xl: clamp(38px, 5.6vw, 72px);
-  --text-hero: clamp(42px, 6.6vw, 92px);
+  /* Schriftgrößen: nur Stufen der Tailwind-Skala, mit zugehöriger Zeilenhöhe. */
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-base: 16px;
+  --text-lg: 18px;
+  --text-xl: 20px;
+  --text-2xl: 24px;
+  --text-3xl: 30px;
+  --text-4xl: 36px;
+  --text-5xl: 48px;
+  --text-6xl: 60px;
 
-  /* Abstände: eine Skala, keine Einzelwerte in den Komponenten. */
-  --space-1: 4px;
-  --space-2: 8px;
-  --space-3: 12px;
-  --space-4: 16px;
-  --space-5: 24px;
-  --space-6: 32px;
-  --space-7: 48px;
-  --space-8: 72px;
-  --space-9: 112px;
+  --leading-xs: 16px;
+  --leading-sm: 20px;
+  --leading-base: 24px;
+  --leading-lg: 28px;
+  --leading-xl: 28px;
+  --leading-2xl: 32px;
+  --leading-3xl: 36px;
+  --leading-4xl: 40px;
+
+  /* Abstände: nur diese Werte. */
+  --space-0: 0;
+  --space-25: 2px;
+  --space-50: 4px;
+  --space-75: 8px;
+  --space-100: 12px;
+  --space-200: 16px;
+  --space-300: 24px;
+  --space-400: 32px;
+  --space-500: 40px;
+  --space-600: 48px;
+  --space-700: 64px;
+  --space-800: 80px;
+  --space-900: 96px;
+
+  /* Radien: Tailwind-Werte. Verschachtelt gilt innen = außen − Abstand,
+     solange das Ergebnis größer als 2 ist; sonst bleibt die Form eckig. */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-2xl: 16px;
+  --radius-3xl: 24px;
+  --radius-full: 9999px;
 
   /* Maße */
   --shell: 1200px;
   --page-pad: clamp(20px, 4vw, 40px);
   --measure: 66ch;
-  --control: 46px;
+  --measure-hero: 680px;
+  --control: 44px;
 
-  /* Bewegung */
-  --ease: cubic-bezier(0.22, 0.68, 0.16, 1);
-  --dur: 180ms;
+  /* Bewegung: eine Kurve, die abbremst. */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-color: 300ms;
+  --dur-move: 500ms;
+  --dur-reveal: 700ms;
 }

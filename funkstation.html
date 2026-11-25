@@ -20,12 +20,14 @@
     <a class="skip-link" href="#main">Zum Inhalt springen</a>
 
     <header class="site-header">
-      <div class="shell site-header__inner">
+      <div class="site-header__inner">
         <a class="brand" href="index.html">
-          <img class="brand__mark" src="logoblue.svg" width="44" height="44" alt="" />
+          <img class="brand__mark" src="logoblue.svg" width="32" height="32" alt="" />
           <span>Funkstation &amp; Smart City Lindau</span>
         </a>
-        <button class="btn nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menü</button>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menü öffnen">
+          <span></span><span></span>
+        </button>
         <nav class="site-nav" id="site-nav" aria-label="Hauptnavigation">
           <a href="index.html">Start</a>
           <a href="lorawan.html">LoRaWAN</a>
@@ -50,7 +52,7 @@
 
         <section class="section" aria-labelledby="station-title">
           <p class="label section__label">Die Station</p>
-          <div class="section__body">
+          <div class="section__body" data-reveal>
             <h2 id="station-title">Funkgeräte und Antennen an der Schule</h2>
             <p class="lead">
               Wir planen die Station, bauen sie auf und nehmen sie in Betrieb.
@@ -78,7 +80,7 @@
 
         <section class="section" aria-labelledby="websdr-title">
           <p class="label section__label">WebSDR</p>
-          <div class="section__body">
+          <div class="section__body" data-reveal>
             <h2 id="websdr-title">Funk im Browser mithören</h2>
             <p class="lead">
               Ein WebSDR ist eine Empfangsstation, die sich über den Webbrowser bedienen lässt.
@@ -91,7 +93,7 @@
 
         <section class="section" aria-labelledby="kontakte-title">
           <p class="label section__label">Funkkontakte</p>
-          <div class="section__body">
+          <div class="section__body" data-reveal>
             <h2 id="kontakte-title">Kontakt zu Forschung und Raumfahrt</h2>
             <p class="lead">
               Wir bereiten Funkkontakte zu Forschungsstationen und Raumfahrtmissionen vor.
@@ -107,14 +109,14 @@
               </div>
               <div>
                 <dt>ISS</dt>
-                <dd>Internationale Raumstation, zum 500-jährigen Jubiläum der Schule</dd>
+                <dd>Internationale Raumstation, zum 500. Jubiläum der Schule</dd>
               </div>
             </dl>
             <p class="notice">
               Das sind Ziele, keine Zusagen. Ob ein Kontakt zustande kommt, hängt von Funkwegen, Frequenzen und Rahmenbedingungen ab.
             </p>
             <div class="btn-row">
-              <a class="btn" href="lorawan.html">Zu Projekt 1: LoRaWAN-Gateway-System</a>
+              <a class="btn" href="lorawan.html">Zu Projekt 1: LoRaWAN Gateway System</a>
             </div>
           </div>
         </section>
@@ -133,7 +135,7 @@
         <nav aria-label="Projekt">
           <p class="label">Projekt</p>
           <ul>
-            <li><a href="lorawan.html">LoRaWAN-Gateway-System</a></li>
+            <li><a href="lorawan.html">LoRaWAN Gateway System</a></li>
             <li><a href="funkstation.html">Funkstation</a></li>
             <li><a href="ueber-uns.html">Über uns</a></li>
             <li><a href="kalender.html">Kalender</a></li>

@@ -21,12 +21,14 @@
     <a class="skip-link" href="#main">Zum Kalender springen</a>
 
     <header class="site-header">
-      <div class="shell site-header__inner">
+      <div class="site-header__inner">
         <a class="brand" href="index.html">
-          <img class="brand__mark" src="logoblue.svg" width="44" height="44" alt="" />
+          <img class="brand__mark" src="logoblue.svg" width="32" height="32" alt="" />
           <span>Funkstation &amp; Smart City Lindau</span>
         </a>
-        <button class="btn nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menü</button>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menü öffnen">
+          <span></span><span></span>
+        </button>
         <nav class="site-nav" id="site-nav" aria-label="Hauptnavigation">
           <a href="index.html">Start</a>
           <a href="lorawan.html">LoRaWAN</a>
@@ -55,7 +57,7 @@
 
         <div class="legend" id="legend" aria-label="Kategorien filtern">
           <button type="button" class="legend-btn" data-cat="sensor" aria-pressed="true">
-            <span class="swatch swatch--sensor" aria-hidden="true"></span>LoRaWAN-Gateway-System
+            <span class="swatch swatch--sensor" aria-hidden="true"></span>LoRaWAN Gateway System
           </button>
           <button type="button" class="legend-btn" data-cat="funk" aria-pressed="true">
             <span class="swatch swatch--funk" aria-hidden="true"></span>Funkstation
@@ -111,7 +113,7 @@
         <nav aria-label="Projekt">
           <p class="label">Projekt</p>
           <ul>
-            <li><a href="lorawan.html">LoRaWAN-Gateway-System</a></li>
+            <li><a href="lorawan.html">LoRaWAN Gateway System</a></li>
             <li><a href="funkstation.html">Funkstation</a></li>
             <li><a href="ueber-uns.html">Über uns</a></li>
             <li><a href="kalender.html">Kalender</a></li>
@@ -149,7 +151,7 @@
             <label class="field">
               <span>Kategorie</span>
               <select name="category" id="eventCategory">
-                <option value="sensor">LoRaWAN-Gateway-System</option>
+                <option value="sensor">LoRaWAN Gateway System</option>
                 <option value="funk">Funkstation</option>
                 <option value="workshop" selected>Workshops &amp; Messungen</option>
                 <option value="milestone">Meilensteine</option>
@@ -158,7 +160,7 @@
           </div>
           <label class="field">
             <span>Titel</span>
-            <input type="text" name="title" id="eventTitle" maxlength="64" placeholder="z. B. Gateway-Reichweitentest" required />
+            <input type="text" name="title" id="eventTitle" maxlength="64" placeholder="z. B. Reichweitentest Gateway" required />
           </label>
           <label class="field">
             <span>Notiz <em>optional</em></span>

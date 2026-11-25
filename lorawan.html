@@ -6,9 +6,9 @@
     <meta name="theme-color" content="#1226c9" />
     <meta
       name="description"
-      content="Projekt 1 des P-Seminars Physik am Bodensee-Gymnasium Lindau: Sensoren, ein LoRaWAN-Gateway für The Things Network und offene Messdaten."
+      content="Projekt 1 des P-Seminars Physik am Bodensee-Gymnasium Lindau: Sensoren, ein LoRaWAN Gateway für The Things Network und offene Messdaten."
     />
-    <title>LoRaWAN-Gateway-System — Funkstation &amp; Smart City Lindau</title>
+    <title>LoRaWAN Gateway System — Funkstation &amp; Smart City Lindau</title>
     <link rel="icon" type="image/svg+xml" href="logoblue.svg" />
     <link rel="stylesheet" href="assets/fonts/fonts.css" />
     <link rel="stylesheet" href="assets/css/tokens.css" />
@@ -20,12 +20,14 @@
     <a class="skip-link" href="#main">Zum Inhalt springen</a>
 
     <header class="site-header">
-      <div class="shell site-header__inner">
+      <div class="site-header__inner">
         <a class="brand" href="index.html">
-          <img class="brand__mark" src="logoblue.svg" width="44" height="44" alt="" />
+          <img class="brand__mark" src="logoblue.svg" width="32" height="32" alt="" />
           <span>Funkstation &amp; Smart City Lindau</span>
         </a>
-        <button class="btn nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menü</button>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menü öffnen">
+          <span></span><span></span>
+        </button>
         <nav class="site-nav" id="site-nav" aria-label="Hauptnavigation">
           <a href="index.html">Start</a>
           <a href="lorawan.html" aria-current="page">LoRaWAN</a>
@@ -39,7 +41,7 @@
     <main id="main" class="shell">
       <header class="page-head">
         <p class="label">Projekt 1 · Smart City</p>
-        <h1>LoRaWAN-Gateway-System</h1>
+        <h1>LoRaWAN Gateway System</h1>
         <p class="lead">
           Sensoren in Lindau messen Umweltdaten und senden sie per Funk an ein Gateway auf dem Schulgelände. Von dort gelangen die Werte ins Internet, wo sie alle einsehen können.
         </p>
@@ -50,7 +52,7 @@
 
         <section class="section" aria-labelledby="weg-title">
           <p class="label section__label">Funktionsweise</p>
-          <div class="section__body">
+          <div class="section__body" data-reveal>
             <h2 id="weg-title">Vom Sensor ins Web</h2>
             <p class="lead">
               Das System besteht aus vier Teilen. Jeder Messwert nimmt denselben Weg.
@@ -66,7 +68,7 @@
 
         <section class="section" aria-labelledby="sensoren-title">
           <p class="label section__label">Sensoren</p>
-          <div class="section__body">
+          <div class="section__body" data-reveal>
             <h2 id="sensoren-title">Was wir messen</h2>
             <p class="lead">
               Wir entwickeln Sensoren, stellen sie auf und betreiben sie. Ein Schwerpunkt ist das Wasser des Bodensees.
@@ -101,23 +103,23 @@
 
         <section class="section" aria-labelledby="gateway-title">
           <p class="label section__label">Gateway</p>
-          <div class="section__body">
+          <div class="section__body" data-reveal>
             <h2 id="gateway-title">Ein offenes Netz für die Region</h2>
             <p class="lead">
               Auf dem Schulgelände entsteht ein Gateway für The Things Network (TTN).
             </p>
             <p>
-              TTN ist ein gemeinschaftlich betriebenes Netz, über das LoRaWAN-Sensoren ihre Daten ins Internet übertragen. Unser Gateway ist ein öffentlicher Zugangspunkt: Auch andere Menschen, Schulen und Organisationen in der Region können ihre Sensoren darüber anbinden.
+              TTN ist ein gemeinschaftlich betriebenes Netz, über das LoRaWAN Sensoren ihre Daten ins Internet übertragen. Unser Gateway ist ein öffentlicher Zugangspunkt: Auch andere Menschen, Schulen und Organisationen in der Region können ihre Sensoren darüber anbinden.
             </p>
             <p>
-              Je nach Projektverlauf sind weitere Gateway-Standorte denkbar.
+              Je nach Projektverlauf sind weitere Standorte für Gateways denkbar.
             </p>
           </div>
         </section>
 
         <section class="section" aria-labelledby="technik-title">
           <p class="label section__label">Technik</p>
-          <div class="section__body">
+          <div class="section__body" data-reveal>
             <h2 id="technik-title">Warum LoRaWAN</h2>
             <div class="card-grid">
               <div class="card">
@@ -153,7 +155,7 @@
         <nav aria-label="Projekt">
           <p class="label">Projekt</p>
           <ul>
-            <li><a href="lorawan.html">LoRaWAN-Gateway-System</a></li>
+            <li><a href="lorawan.html">LoRaWAN Gateway System</a></li>
             <li><a href="funkstation.html">Funkstation</a></li>
             <li><a href="ueber-uns.html">Über uns</a></li>
             <li><a href="kalender.html">Kalender</a></li>
