@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Startseite — Hero mit Antenne und die beiden Projekte.
+   Startseite — Hero mit Antenne, die zwei Projekte, Abschluss.
    ========================================================================== */
 
 :root {
@@ -13,24 +13,57 @@
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 1fr) calc(var(--mast-x) + var(--gutter));
-  column-gap: var(--space-6);
+  column-gap: var(--space-400);
 }
 
 .hero__copy {
-  padding-block: var(--space-8);
+  padding-block: var(--space-700) var(--space-800);
 }
 
 .hero h1 {
-  margin-top: var(--space-4);
-  font-size: var(--text-hero);
+  max-width: var(--measure-hero);
+  margin-top: var(--space-200);
+  padding-bottom: 0.08em;
+  background: linear-gradient(90deg, #ffffff, #9b9b9b);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .hero .lead {
-  margin-top: var(--space-5);
+  max-width: var(--measure-hero);
+  margin-top: var(--space-300);
 }
 
 .hero .btn-row {
-  margin-top: var(--space-6);
+  align-items: center;
+  margin-top: var(--space-400);
+}
+
+/* Ein Beleg direkt unter dem Aufruf: Fakten aus dem Projekt. */
+.proof {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-75) var(--space-300);
+  margin-top: var(--space-600);
+  padding-top: var(--space-300);
+  border-top: 1px solid var(--line);
+}
+
+.proof li {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-75);
+  font-size: var(--text-sm);
+  line-height: var(--leading-sm);
+  color: var(--text-soft);
+}
+
+.proof strong {
+  font-size: var(--text-xl);
+  font-weight: 600;
+  line-height: var(--leading-xl);
+  color: var(--paper);
 }
 
 /* Skizze oben, darunter verlängert ein Strich den Mast bis zur Leitung. */
@@ -38,7 +71,7 @@
   display: flex;
   flex-direction: column;
   width: var(--antenna-width);
-  padding-top: var(--space-8);
+  padding-top: var(--space-700);
   color: var(--paper);
 }
 
@@ -56,7 +89,7 @@
   }
 
   .hero__copy {
-    padding-block: var(--space-7);
+    padding-block: var(--space-600);
   }
 
   .hero__antenna {
@@ -65,67 +98,139 @@
 }
 
 /* --------------------------------------------------------------------------
-   Die zwei Projekte
+   Die zwei Projekte: farblich getrennt wie im Kalender.
+   Projekt 1 auf Lavendel, Projekt 2 auf dunklem Blau.
    -------------------------------------------------------------------------- */
 
 .projects {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--space-5);
+  gap: var(--space-300);
 }
 
 .project {
   display: flex;
   flex-direction: column;
-  padding: var(--space-6);
-  border: 1px solid var(--line);
-  background: var(--blue-deep);
+  padding: var(--space-400);
+  border: 1px solid transparent;
+  border-radius: var(--radius-3xl);
   text-decoration: none;
   transition:
-    border-color var(--dur) var(--ease),
-    background var(--dur) var(--ease);
+    transform var(--dur-move) var(--ease),
+    border-color var(--dur-color) var(--ease);
 }
 
 .project:hover {
+  transform: translateY(calc(-1 * var(--space-50)));
+}
+
+.project:active {
+  transform: scale(0.98);
+}
+
+.project--lorawan {
+  background: var(--lavender);
+  color: var(--ink);
+}
+
+.project--funk {
+  border-color: var(--line);
+  background: var(--blue-deep);
+}
+
+.project--funk:hover {
   border-color: var(--paper);
-  background: var(--blue-light);
+}
+
+.project__no {
+  display: flex;
+  align-items: center;
+  gap: var(--space-100);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  line-height: var(--leading-sm);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.project__no b {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  background: currentColor;
+}
+
+.project__no b span {
+  color: var(--lavender);
+}
+
+.project--funk .project__no b span {
+  color: var(--blue-deep);
 }
 
 .project h3 {
-  margin-top: var(--space-3);
-  font-size: var(--text-2xl);
-  font-weight: 900;
-  font-stretch: 110%;
-  line-height: 1.05;
-  letter-spacing: -0.03em;
-  text-transform: uppercase;
-  hyphens: auto;
+  margin-top: var(--space-300);
+  font-size: var(--text-3xl);
+  line-height: var(--leading-3xl);
 }
 
 .project p {
-  margin-top: var(--space-4);
-  color: var(--text-soft);
+  margin-top: var(--space-200);
 }
 
 .project .bullets {
-  margin-block: var(--space-5) var(--space-6);
+  margin-block: var(--space-300) var(--space-400);
   font-size: var(--text-sm);
+  line-height: var(--leading-sm);
 }
 
 .project__more {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-75);
   margin-top: auto;
-  padding-top: var(--space-4);
-  border-top: 1px solid var(--line);
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--paper);
+  font-weight: 600;
+}
+
+.project__more .icon {
+  transition: transform var(--dur-move) var(--ease);
+}
+
+.project:hover .project__more .icon {
+  transform: translateX(var(--space-50));
+}
+
+/* Ablauf je Projekt: Rubrik über drei Schritten. */
+.flow + .flow {
+  margin-top: var(--space-600);
+}
+
+.flow .steps {
+  margin-top: var(--space-200);
 }
 
 @media (max-width: 1000px) {
   .projects {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 599px) {
+  .project {
+    padding: var(--space-300);
+  }
+
+  .project h3 {
+    font-size: var(--text-2xl);
+    line-height: var(--leading-2xl);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project:hover {
+    transform: none;
   }
 }

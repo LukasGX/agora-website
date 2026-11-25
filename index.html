@@ -6,7 +6,7 @@
     <meta name="theme-color" content="#1226c9" />
     <meta
       name="description"
-      content="Das P-Seminar Physik am Bodensee-Gymnasium Lindau baut zwei Projekte: ein LoRaWAN-Gateway-System für Umweltdaten und eine Funkstation."
+      content="Das P-Seminar Physik am Bodensee-Gymnasium Lindau baut zwei Projekte: ein LoRaWAN Gateway System für Umweltdaten und eine Funkstation."
     />
     <title>Funkstation &amp; Smart City Lindau — Zwei Funkprojekte am Bodensee-Gymnasium</title>
     <link rel="icon" type="image/svg+xml" href="logoblue.svg" />
@@ -16,7 +16,7 @@
     <meta property="og:title" content="Funkstation &amp; Smart City Lindau" />
     <meta
       property="og:description"
-      content="Zwei Projekte des P-Seminars Physik am Bodensee-Gymnasium Lindau: ein LoRaWAN-Gateway-System für Umweltdaten und eine Funkstation."
+      content="Zwei Projekte des P-Seminars Physik am Bodensee-Gymnasium Lindau: ein LoRaWAN Gateway System für Umweltdaten und eine Funkstation."
     />
     <link rel="stylesheet" href="assets/fonts/fonts.css" />
     <link rel="stylesheet" href="assets/css/tokens.css" />
@@ -29,12 +29,14 @@
     <a class="skip-link" href="#main">Zum Inhalt springen</a>
 
     <header class="site-header">
-      <div class="shell site-header__inner">
+      <div class="site-header__inner">
         <a class="brand" href="index.html">
-          <img class="brand__mark" src="logoblue.svg" width="44" height="44" alt="" />
+          <img class="brand__mark" src="logoblue.svg" width="32" height="32" alt="" />
           <span>Funkstation &amp; Smart City Lindau</span>
         </a>
-        <button class="btn nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menü</button>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menü öffnen">
+          <span></span><span></span>
+        </button>
         <nav class="site-nav" id="site-nav" aria-label="Hauptnavigation">
           <a href="index.html" aria-current="page">Start</a>
           <a href="lorawan.html">LoRaWAN</a>
@@ -48,17 +50,20 @@
     <main id="main">
       <div class="shell hero">
         <div class="hero__copy">
-          <p class="label">P-Seminar Physik 2026/27 · Bodensee-Gymnasium Lindau</p>
-          <h1>Ein Seminar. Zwei Funk&shy;projekte.</h1>
+          <p class="label">P-Seminar Physik · Bodensee-Gymnasium Lindau</p>
+          <h1>Ein Seminar<br />zwei Funkprojekte</h1>
           <p class="lead">
-            Wir sind 16 Schülerinnen und Schüler und bauen am Bodensee-Gymnasium zwei Dinge: ein
-            LoRaWAN-Gateway-System, das Umweltdaten aus Lindau sammelt, und eine Funkstation für
-            Funkverbindungen in alle Welt.
+            Wir bauen ein LoRaWAN Gateway System, das Umweltdaten aus Lindau ins Netz bringt, und eine
+            Funkstation, die Signale aus aller Welt empfängt.
           </p>
           <div class="btn-row">
-            <a class="btn btn--solid" href="lorawan.html">LoRaWAN-Gateway-System</a>
-            <a class="btn btn--solid" href="funkstation.html">Funkstation</a>
+            <a class="btn btn--solid" href="#projekte">Die zwei Projekte ansehen <svg class="icon" viewBox="0 0 256 256" aria-hidden="true"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></a>
           </div>
+          <ul class="proof" aria-label="Eckdaten">
+            <li><strong>16</strong> Schülerinnen und Schüler</li>
+            <li><strong>2026/27</strong> Schuljahr</li>
+            <li><strong>DARC e.&nbsp;V.</strong> fachliche Unterstützung</li>
+          </ul>
         </div>
 
         <div class="hero__antenna" aria-hidden="true">
@@ -82,19 +87,28 @@
         <div class="track">
           <div class="track__line" aria-hidden="true"><span class="track__fill"></span></div>
 
-          <section class="section" aria-labelledby="projekte-title">
-            <p class="label section__label">Die Projekte</p>
+          <section class="section" aria-label="Unsere Idee">
+            <p class="label section__label">Die Idee</p>
             <div class="section__body">
+              <p class="heading-3 tagline" data-words>
+                Was unsichtbar ist, wird messbar. Was weit entfernt ist, wird hörbar.
+              </p>
+            </div>
+          </section>
+
+          <section class="section" id="projekte" aria-labelledby="projekte-title">
+            <p class="label section__label">Die Projekte</p>
+            <div class="section__body" data-reveal>
               <h2 id="projekte-title">Zwei Projekte, ein Team</h2>
               <p class="lead">
-                Beide Projekte arbeiten mit Funk, haben aber unterschiedliche Aufgaben. Das eine überträgt
+                Beide Projekte arbeiten mit Funk, aber mit verschiedenen Aufgaben. Das eine überträgt
                 Messwerte, das andere Sprache und Signale.
               </p>
 
               <div class="projects">
-                <a class="project" href="lorawan.html">
-                  <span class="label">Projekt 1 · Smart City</span>
-                  <h3>LoRaWAN-Gateway-System</h3>
+                <a class="project project--lorawan" href="lorawan.html">
+                  <span class="project__no"><b><span>1</span></b>Projekt 1 · Smart City</span>
+                  <h3>LoRaWAN Gateway System</h3>
                   <p>
                     Sensoren messen Wasser, Luft und Wetter. Ein Gateway auf dem Schulgelände empfängt die
                     Werte per Funk und leitet sie ins Internet.
@@ -104,64 +118,123 @@
                     <li>Gateway für The Things Network</li>
                     <li>Messwerte offen im Web</li>
                   </ul>
-                  <span class="project__more">Zum Projekt →</span>
+                  <span class="project__more">Zum LoRaWAN Projekt <svg class="icon" viewBox="0 0 256 256" aria-hidden="true"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></span>
                 </a>
 
-                <a class="project" href="funkstation.html">
-                  <span class="label">Projekt 2 · Funkstation</span>
+                <a class="project project--funk" href="funkstation.html">
+                  <span class="project__no"><b><span>2</span></b>Projekt 2 · Funk</span>
                   <h3>Funkstation</h3>
                   <p>
-                    Eine Station mit Funkgeräten und Antennen auf dem Schulgelände. Mit ihr empfangen und
-                    senden wir Funksignale weit über Lindau hinaus.
+                    Funkgeräte und Antennen auf dem Schulgelände. Mit ihnen empfangen und senden wir
+                    Signale weit über Lindau hinaus.
                   </p>
                   <ul class="bullets">
                     <li>Funkgeräte und Antennen an der Schule</li>
                     <li>WebSDR: Funk im Browser mithören</li>
                     <li>Funkkontakte zu Forschungsstationen</li>
                   </ul>
-                  <span class="project__more">Zum Projekt →</span>
+                  <span class="project__more">Zur Funkstation <svg class="icon" viewBox="0 0 256 256" aria-hidden="true"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></span>
                 </a>
               </div>
             </div>
           </section>
 
-          <section class="section" aria-labelledby="warum-title">
-            <p class="label section__label">Warum</p>
-            <div class="section__body">
-              <h2 id="warum-title">Technik, die der Region nützt</h2>
-              <p class="lead">
-                Die Anlagen sollen nach dem Schuljahr weiterlaufen und für Lindau und die Region nutzbar
-                sein.
-              </p>
+          <section class="section" aria-labelledby="ablauf-title">
+            <p class="label section__label">So funktioniert es</p>
+            <div class="section__body" data-reveal>
+              <h2 id="ablauf-title">Drei Schritte je Projekt</h2>
+
+              <div class="flow">
+                <p class="label">Projekt 1 · LoRaWAN Gateway System</p>
+                <ol class="steps">
+                  <li><strong>Messen</strong><span>Sensoren erfassen Werte an See und Stadt.</span></li>
+                  <li><strong>Funken</strong><span>Das Gateway an der Schule empfängt sie per LoRaWAN.</span></li>
+                  <li><strong>Zeigen</strong><span>Ein Webserver macht die Werte für alle sichtbar.</span></li>
+                </ol>
+              </div>
+
+              <div class="flow">
+                <p class="label">Projekt 2 · Funkstation</p>
+                <ol class="steps">
+                  <li><strong>Aufbauen</strong><span>Funkgeräte und Antennen auf dem Schulgelände.</span></li>
+                  <li><strong>Empfangen</strong><span>Das WebSDR bringt den Empfang in den Browser.</span></li>
+                  <li><strong>Kontakt aufnehmen</strong><span>Funkverbindungen zu Forschung und Raumfahrt.</span></li>
+                </ol>
+              </div>
+            </div>
+          </section>
+
+          <section class="section" aria-labelledby="partner-title">
+            <p class="label section__label">Unterstützung</p>
+            <div class="section__body" data-reveal>
+              <h2 id="partner-title">Wer uns hilft</h2>
               <div class="card-grid">
                 <div class="card">
-                  <h3>Umwelt</h3>
-                  <p>Messdaten aus See, Luft und Stadt, für alle einsehbar.</p>
+                  <h3>DARC e.&nbsp;V.</h3>
+                  <p>Der Deutsche Amateur-Radio-Club unterstützt uns fachlich.</p>
                 </div>
                 <div class="card">
-                  <h3>Region</h3>
-                  <p>Ein offenes Funknetz, das andere mitbenutzen können.</p>
+                  <h3>Bodensee-Gymnasium</h3>
+                  <p>Die Schule begleitet das Seminar und stellt den Standort.</p>
                 </div>
                 <div class="card">
-                  <h3>Wissen</h3>
-                  <p>Elektronik, Funktechnik und Sensorik in der Praxis.</p>
+                  <h3>Institut für Seenforschung</h3>
+                  <p>Kontakt nach Langenargen für die Messungen am See.</p>
                 </div>
               </div>
             </div>
           </section>
 
-          <section class="section" aria-labelledby="mitmachen-title">
-            <p class="label section__label">Mehr erfahren</p>
-            <div class="section__body">
-              <h2 id="mitmachen-title">Team, Termine, Kontakt</h2>
-              <p>
-                Wer wir sind und wer uns unterstützt, steht auf der Seite „Über uns“. Alle Termine und
-                Meilensteine stehen im Projektkalender.
+          <section class="section" aria-labelledby="faq-title">
+            <p class="label section__label">Fragen</p>
+            <div class="section__body" data-reveal>
+              <h2 id="faq-title">Häufige Fragen</h2>
+              <div class="faq">
+                <details>
+                  <summary>Was ist LoRaWAN?<svg class="icon" viewBox="0 0 256 256" aria-hidden="true"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/></svg></summary>
+                  <p>LoRaWAN ist ein Funkverfahren für kleine Datenmengen. Sensoren können damit über größere Entfernungen senden und brauchen dabei wenig Energie.</p>
+                </details>
+                <details>
+                  <summary>Was ist The Things Network?<svg class="icon" viewBox="0 0 256 256" aria-hidden="true"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/></svg></summary>
+                  <p>The Things Network ist ein gemeinschaftlich betriebenes Netz aus LoRaWAN Gateways. Es leitet die Daten der Sensoren ins Internet weiter. Unser Gateway wird ein Teil davon.</p>
+                </details>
+                <details>
+                  <summary>Welche Werte wollen wir messen?<svg class="icon" viewBox="0 0 256 256" aria-hidden="true"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/></svg></summary>
+                  <p>Wasserstand und Wasserparameter des Bodensees, Luftqualität, Temperatur und Luftfeuchtigkeit, Helligkeit und Geräuschpegel.</p>
+                </details>
+                <details>
+                  <summary>Was ist ein WebSDR?<svg class="icon" viewBox="0 0 256 256" aria-hidden="true"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/></svg></summary>
+                  <p>Ein WebSDR ist eine Empfangsstation, die man über den Browser bedient. Damit kann jede und jeder Funkstationen mithören, ohne selbst ein Funkgerät zu besitzen.</p>
+                </details>
+                <details>
+                  <summary>Kann ich das Gateway für eigene Sensoren nutzen?<svg class="icon" viewBox="0 0 256 256" aria-hidden="true"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/></svg></summary>
+                  <p>Ja, das ist das Ziel. Über The Things Network können auch andere Menschen, Schulen und Organisationen in der Region ihre Sensoren anbinden.</p>
+                </details>
+                <details>
+                  <summary>Wann ist alles fertig?<svg class="icon" viewBox="0 0 256 256" aria-hidden="true"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/></svg></summary>
+                  <p>Wir bauen im Schuljahr 2026/27 Schritt für Schritt. Was umgesetzt wird, hängt vom Projektverlauf, der technischen Machbarkeit und der Finanzierung ab. Die nächsten Termine stehen im Projektkalender.</p>
+                </details>
+                <details>
+                  <summary>Wie kann ich das Projekt unterstützen?<svg class="icon" viewBox="0 0 256 256" aria-hidden="true"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/></svg></summary>
+                  <p>Wir freuen uns über Ausrüstung, Fachwissen und Menschen, die den Betrieb mittragen. Schreiben Sie an das Sekretariat des Bodensee-Gymnasiums.</p>
+                </details>
+              </div>
+            </div>
+          </section>
+
+          <section class="section" aria-labelledby="kontakt-title">
+            <p class="label section__label">Kontakt</p>
+            <div class="section__body" data-reveal>
+              <h2 id="kontakt-title">Sie möchten mitmachen oder helfen?</h2>
+              <p class="lead">
+                Schreiben Sie uns über das Sekretariat des Bodensee-Gymnasiums. Termine und Meilensteine
+                stehen im Projektkalender.
               </p>
               <div class="btn-row">
-                <a class="btn" href="ueber-uns.html">Über uns</a>
-                <a class="btn" href="kalender.html">Projektkalender</a>
+                <a class="btn btn--solid" href="mailto:mail@bodensee-gymnasium.de">Kontakt aufnehmen <svg class="icon" viewBox="0 0 256 256" aria-hidden="true"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></a>
+                <a class="btn" href="kalender.html">Zum Projektkalender</a>
               </div>
+              <p class="notice">Ziele, keine Zusagen: Was umgesetzt wird, hängt von Machbarkeit und Finanzierung ab.</p>
             </div>
           </section>
         </div>
@@ -180,7 +253,7 @@
         <nav aria-label="Projekt">
           <p class="label">Projekt</p>
           <ul>
-            <li><a href="lorawan.html">LoRaWAN-Gateway-System</a></li>
+            <li><a href="lorawan.html">LoRaWAN Gateway System</a></li>
             <li><a href="funkstation.html">Funkstation</a></li>
             <li><a href="ueber-uns.html">Über uns</a></li>
             <li><a href="kalender.html">Kalender</a></li>
