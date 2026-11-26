@@ -70,7 +70,7 @@
   width: 9px;
   height: 9px;
   border-radius: var(--radius-full);
-  background: var(--signal);
+  background: var(--paper);
 }
 
 .section__label {
@@ -220,8 +220,8 @@
   height: 32px;
   margin-bottom: var(--space-200);
   border-radius: var(--radius-full);
-  background: var(--signal);
-  color: var(--ink);
+  background: var(--paper);
+  color: var(--blue);
   font-family: var(--font-mono);
   font-size: var(--text-sm);
   font-weight: 600;
@@ -274,7 +274,7 @@
   gap: var(--space-100);
   max-width: var(--measure);
   padding: var(--space-200) var(--space-300);
-  border: 1px solid var(--signal);
+  border: 1px solid var(--line);
   border-radius: var(--radius-xl);
   font-size: var(--text-sm);
   line-height: var(--leading-sm);
@@ -287,7 +287,7 @@
   height: 8px;
   margin-top: 6px;
   border-radius: var(--radius-full);
-  background: var(--signal);
+  background: var(--paper);
 }
 
 .bullets {

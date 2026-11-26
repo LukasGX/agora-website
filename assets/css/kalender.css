@@ -204,7 +204,7 @@
 }
 
 .day.is-selected .day-num {
-  color: var(--signal);
+  color: var(--paper);
 }
 
 .day.is-selected.is-today .day-num {
@@ -379,7 +379,7 @@
   font-stretch: 108%;
   line-height: 1;
   letter-spacing: -0.02em;
-  color: var(--signal);
+  color: var(--paper);
 }
 
 .focus-meta {
@@ -456,8 +456,8 @@
 }
 
 .event-action:hover {
-  background: var(--signal);
-  border-color: var(--signal);
+  background: var(--paper);
+  border-color: var(--paper);
   color: var(--ink);
 }
 
@@ -536,7 +536,7 @@
 .storage-note {
   margin-top: var(--space-300);
   padding: var(--space-100) var(--space-200);
-  border: 1px solid var(--signal);
+  border: 1px solid var(--line);
   border-radius: var(--radius-xl);
   background: var(--blue-deep);
   font-size: var(--text-sm);

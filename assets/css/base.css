@@ -80,12 +80,12 @@ dd {
 }
 
 ::selection {
-  background: var(--signal);
-  color: var(--ink);
+  background: var(--paper);
+  color: var(--blue);
 }
 
 :focus-visible {
-  outline: 2px solid var(--signal);
+  outline: 2px solid var(--paper);
   outline-offset: 3px;
 }
 
@@ -284,9 +284,10 @@ h3,
     transform var(--dur-color) var(--ease);
 }
 
+/* Hover: der Button hebt sich um 2 px, die Fläche wird etwas heller. */
 .btn:hover {
-  background: var(--paper);
-  color: var(--blue);
+  background: var(--line-soft);
+  transform: translateY(calc(-1 * var(--space-25)));
 }
 
 .btn:active {
@@ -299,9 +300,8 @@ h3,
 }
 
 .btn--solid:hover {
-  border-color: var(--signal);
-  background: var(--signal);
-  color: var(--ink);
+  border-color: #ffffff;
+  background: #ffffff;
 }
 
 .btn .icon {
@@ -339,6 +339,14 @@ h3,
   justify-content: center;
   padding-inline: var(--space-200);
   pointer-events: none;
+  transition:
+    transform var(--dur-move) var(--ease),
+    opacity var(--dur-color) var(--ease);
+}
+
+/* Beim Scrollen nach unten fährt die Navigation aus dem Bild (site.js). */
+.site-header.is-hidden {
+  transform: translateY(calc(-100% - var(--space-200)));
 }
 
 .site-header__inner {
@@ -348,21 +356,15 @@ h3,
   align-items: center;
   gap: var(--space-200);
   padding: var(--space-75);
+  border-radius: var(--radius-full);
+  background: var(--header-bg);
+  color: var(--header-text);
   pointer-events: auto;
 }
 
-/* Das Glas liegt auf einer eigenen Ebene: backdrop-filter direkt auf der Leiste
-   würde das fixierte Handymenü in die Leiste einsperren. */
-.site-header__inner::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  border: 1px solid var(--line);
-  border-radius: var(--radius-full);
-  background: var(--glass);
-  -webkit-backdrop-filter: blur(16px);
-  backdrop-filter: blur(16px);
+/* Auf Weiß braucht der Fokusrahmen eine dunkle Farbe. */
+.site-header :focus-visible {
+  outline-color: var(--header-active);
 }
 
 .brand {
@@ -383,7 +385,6 @@ h3,
   flex: none;
   width: 32px;
   height: 32px;
-  border-radius: var(--radius-full);
 }
 
 .site-nav {
@@ -401,20 +402,21 @@ h3,
   font-weight: 500;
   line-height: var(--leading-sm);
   text-decoration: none;
-  color: var(--text-soft);
+  color: var(--header-text);
   transition:
     background-color var(--dur-color) var(--ease),
     color var(--dur-color) var(--ease);
 }
 
 .site-nav a:hover {
-  background: var(--line-soft);
-  color: var(--paper);
+  background: var(--header-hover);
+  color: var(--header-active);
 }
 
 .site-nav a[aria-current="page"] {
-  background: var(--paper);
-  color: var(--blue);
+  background: var(--header-active-bg);
+  font-weight: 700;
+  color: var(--header-active);
 }
 
 /* Zwei Striche, die sich beim Öffnen zu einem Kreuz drehen. */
@@ -427,7 +429,7 @@ h3,
   padding: 0;
   border: 0;
   border-radius: var(--radius-full);
-  background: var(--paper);
+  background: var(--header-hover);
   cursor: pointer;
 }
 
@@ -436,7 +438,7 @@ h3,
   left: 10px;
   width: 16px;
   height: 2px;
-  background: var(--blue);
+  background: var(--header-text);
   transition: transform var(--dur-move) var(--ease);
 }
 
@@ -473,9 +475,7 @@ h3,
     flex-direction: column;
     gap: var(--space-75);
     padding: var(--space-900) var(--page-pad) var(--space-400);
-    background: rgba(12, 26, 150, 0.94);
-    -webkit-backdrop-filter: blur(24px);
-    backdrop-filter: blur(24px);
+    background: var(--header-bg);
     opacity: 0;
     visibility: hidden;
     transition:
@@ -497,7 +497,7 @@ h3,
     font-size: var(--text-2xl);
     font-weight: 600;
     line-height: var(--leading-2xl);
-    color: var(--paper);
+    color: var(--header-text);
     opacity: 0;
     transform: translateY(var(--space-300));
     transition:
@@ -614,6 +614,12 @@ h3,
 
   [data-reveal] {
     transform: none !important;
+  }
+
+  .site-header.is-hidden {
+    transform: none;
+    opacity: 0;
+    visibility: hidden;
   }
 
   .site-nav a,

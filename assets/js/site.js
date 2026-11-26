@@ -23,6 +23,40 @@
     });
   };
 
+  /* Runter scrollen blendet die Navigation aus, hoch scrollen holt sie zurück. */
+  const initHeader = () => {
+    const header = document.querySelector(".site-header");
+    if (!header) return;
+
+    let lastY = window.scrollY;
+    let queued = false;
+
+    const update = () => {
+      queued = false;
+      const y = window.scrollY;
+      const menuOpen = document.body.classList.contains("nav-open");
+      if (menuOpen || y < 80 || y < lastY - 4) {
+        header.classList.remove("is-hidden");
+      } else if (y > lastY + 4) {
+        header.classList.add("is-hidden");
+      }
+      if (Math.abs(y - lastY) > 4) lastY = y;
+    };
+
+    window.addEventListener(
+      "scroll",
+      () => {
+        if (queued) return;
+        queued = true;
+        window.requestAnimationFrame(update);
+      },
+      { passive: true },
+    );
+
+    /* Wer per Tastatur in die Navigation springt, muss sie sehen. */
+    header.addEventListener("focusin", () => header.classList.remove("is-hidden"));
+  };
+
   /* Jeder Abschnitt steigt einmal auf, wenn er ins Bild kommt. */
   const initReveals = () => {
     const items = document.querySelectorAll("[data-reveal]");
@@ -56,9 +90,16 @@
       queued = false;
       const viewport = window.innerHeight;
 
+      /* Gefüllt ist, was über der Bildschirmmitte liegt. Am Seitenende erreicht das
+         Ende der Leitung die Mitte oft nicht mehr; deshalb wird so gestreckt, dass
+         die Linie genau beim letzten Scrollpixel voll ist. */
       if (track) {
         const { top, height } = track.getBoundingClientRect();
-        const progress = Math.min(Math.max((viewport / 2 - top) / height, 0), 1);
+        const maxScroll = document.documentElement.scrollHeight - viewport;
+        const topAtEnd = top + window.scrollY - maxScroll;
+        const reachAtEnd = (viewport / 2 - topAtEnd) / height;
+        const raw = (viewport / 2 - top) / height;
+        const progress = Math.min(Math.max(raw / Math.min(Math.max(reachAtEnd, 0.01), 1), 0), 1);
         track.style.setProperty("--progress", progress.toFixed(4));
       }
 
@@ -97,6 +138,7 @@
   }
 
   initNav();
+  initHeader();
   initReveals();
   initScroll();
 })();

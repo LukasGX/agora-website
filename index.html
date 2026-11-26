@@ -31,7 +31,7 @@
     <header class="site-header">
       <div class="site-header__inner">
         <a class="brand" href="index.html">
-          <img class="brand__mark" src="logoblue.svg" width="32" height="32" alt="" />
+          <img class="brand__mark" src="assets/img/logo.svg" width="32" height="32" alt="" />
           <span>Funkstation &amp; Smart City Lindau</span>
         </a>
         <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menü öffnen">
@@ -110,12 +110,12 @@
                   <span class="project__no"><b><span>1</span></b>Projekt 1 · Smart City</span>
                   <h3>LoRaWAN Gateway System</h3>
                   <p>
-                    Sensoren messen Wasser, Luft und Wetter. Ein Gateway auf dem Schulgelände empfängt die
+                    Sensoren messen Wasser, Luft und Wetter. Gateways in ganz Lindau empfangen die
                     Werte per Funk und leitet sie ins Internet.
                   </p>
                   <ul class="bullets">
                     <li>Sensoren für See, Luft, Licht und Lärm</li>
-                    <li>Gateway für The Things Network</li>
+                    <li>Gateways für The Things Network in der ganzen Stadt</li>
                     <li>Messwerte offen im Web</li>
                   </ul>
                   <span class="project__more">Zum LoRaWAN Projekt <svg class="icon" viewBox="0 0 256 256" aria-hidden="true"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></span>
@@ -148,7 +148,7 @@
                 <p class="label">Projekt 1 · LoRaWAN Gateway System</p>
                 <ol class="steps">
                   <li><strong>Messen</strong><span>Sensoren erfassen Werte an See und Stadt.</span></li>
-                  <li><strong>Funken</strong><span>Das Gateway an der Schule empfängt sie per LoRaWAN.</span></li>
+                  <li><strong>Funken</strong><span>Gateways in der ganzen Stadt empfangen sie per LoRaWAN.</span></li>
                   <li><strong>Zeigen</strong><span>Ein Webserver macht die Werte für alle sichtbar.</span></li>
                 </ol>
               </div>
@@ -158,7 +158,7 @@
                 <ol class="steps">
                   <li><strong>Aufbauen</strong><span>Funkgeräte und Antennen auf dem Schulgelände.</span></li>
                   <li><strong>Empfangen</strong><span>Das WebSDR bringt den Empfang in den Browser.</span></li>
-                  <li><strong>Kontakt aufnehmen</strong><span>Funkverbindungen zu Forschung und Raumfahrt.</span></li>
+                  <li><strong>Kontakt aufnehmen</strong><span>Funkverbindungen zu Forschungsstationen.</span></li>
                 </ol>
               </div>
             </div>
@@ -183,34 +183,6 @@
             </div>
           </section>
 
-          <section class="section" aria-labelledby="partner-title">
-            <p class="label section__label">Unterstützung</p>
-            <div class="section__body" data-reveal>
-              <h2 id="partner-title">Wer uns hilft</h2>
-              <div class="card-grid">
-                <div class="card">
-                  <h3>DARC e.&nbsp;V.</h3>
-                  <p>Der Deutsche Amateur-Radio-Club unterstützt uns fachlich.</p>
-                </div>
-                <div class="card">
-                  <h3>Bodensee-Gymnasium</h3>
-                  <p>Die Schule begleitet das Seminar und stellt den Standort.</p>
-                </div>
-                <div class="card">
-                  <h3>Institut für Seenforschung</h3>
-                  <p>Kontakt nach Langenargen für die Messungen am See.</p>
-                </div>
-                <div class="card">
-                  <h3>Rose Plastic</h3>
-                  <p>Hat Unterstützung zugesagt. Wobei genau, etwa bei Gehäusen für die Sensoren, klären wir gerade.</p>
-                </div>
-                <div class="card">
-                  <h3>JT-elektronik GmbH</h3>
-                  <p>Lindauer Hersteller von Messtechnik und Inspektionssystemen. Ein Gespräch über eine Zusammenarbeit ist geplant.</p>
-                </div>
-              </div>
-            </div>
-          </section>
 
           <section class="section" aria-labelledby="faq-title">
             <p class="label section__label">Fragen</p>
@@ -223,7 +195,7 @@
                 </details>
                 <details>
                   <summary>Was ist The Things Network?<svg class="icon" viewBox="0 0 256 256" aria-hidden="true"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/></svg></summary>
-                  <p>The Things Network ist ein gemeinschaftlich betriebenes Netz aus LoRaWAN Gateways. Es leitet die Daten der Sensoren ins Internet weiter. Unser Gateway wird ein Teil davon.</p>
+                  <p>The Things Network ist ein gemeinschaftlich betriebenes Netz aus LoRaWAN Gateways. Es leitet die Daten der Sensoren ins Internet weiter. Unsere Gateways werden ein Teil davon.</p>
                 </details>
                 <details>
                   <summary>Welche Werte wollen wir messen?<svg class="icon" viewBox="0 0 256 256" aria-hidden="true"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/></svg></summary>
@@ -234,7 +206,7 @@
                   <p>Ein WebSDR ist eine Empfangsstation, die man über den Browser bedient. Damit kann jede und jeder Funkstationen mithören, ohne selbst ein Funkgerät zu besitzen.</p>
                 </details>
                 <details>
-                  <summary>Kann ich das Gateway für eigene Sensoren nutzen?<svg class="icon" viewBox="0 0 256 256" aria-hidden="true"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/></svg></summary>
+                  <summary>Kann ich die Gateways für eigene Sensoren nutzen?<svg class="icon" viewBox="0 0 256 256" aria-hidden="true"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/></svg></summary>
                   <p>Ja, das ist das Ziel. Über The Things Network können auch andere Menschen, Schulen und Organisationen in der Region ihre Sensoren anbinden.</p>
                 </details>
                 <details>

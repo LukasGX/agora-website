@@ -21,7 +21,11 @@
   --text-muted: rgba(242, 240, 231, 0.3);
   --line: rgba(242, 240, 231, 0.3);
   --line-soft: rgba(242, 240, 231, 0.16);
-  --glass: rgba(12, 26, 150, 0.72);
+  --header-bg: #ffffff;
+  --header-text: #2e2e2e;
+  --header-active: #000000;
+  --header-hover: rgba(0, 0, 0, 0.06);
+  --header-active-bg: rgba(0, 0, 0, 0.1);
 
   /* Schrift */
   --font-display: "Archivo", "Segoe UI", system-ui, sans-serif;

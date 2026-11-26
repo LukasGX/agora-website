@@ -4,24 +4,25 @@ Projektseite des P-Seminars Physik 2026/27 am Bodensee-Gymnasium Lindau.
 
 Das Seminar (16 Schülerinnen und Schüler der 11. Jahrgangsstufe) baut zwei Projekte:
 
-1. **LoRaWAN Gateway System** – Sensoren messen Umweltdaten (Bodenseewasser, Luftqualität,
-   Temperatur, Luftfeuchtigkeit, Licht, Lärm) und senden sie per LoRaWAN an ein Gateway auf dem
-   Schulgelände. Das Gateway hängt am The Things Network und steht auch anderen in der Region
-   offen. Die Messwerte werden über einen Webserver veröffentlicht.
-2. **Funkstation** – eine Station mit Funkgeräten und Antennen auf dem Schulgelände, mit WebSDR
-   (Funkempfang im Browser), Satellitenfunk und geplanten Funkkontakten zu Neumayer III,
-   Polarstern und zur ISS.
+1. **LoRaWAN Gateway System** - Sensoren messen Umweltdaten (Bodenseewasser, Luftqualität,
+   Temperatur, Luftfeuchtigkeit, Licht, Lärm) und senden sie per LoRaWAN an Gateways auf dem
+   Schulgelände und im ganzen Stadtgebiet von Lindau. Die Gateways hängen am The Things Network
+   und stehen auch anderen in der Region offen. Die Messwerte werden über einen Webserver
+   veröffentlicht.
+2. **Funkstation** - eine Station mit Funkgeräten und Antennen auf dem Schulgelände, mit WebSDR
+   (Funkempfang im Browser), Satellitenfunk und geplanten Funkkontakten zu den
+   Forschungsstationen Neumayer III und Polarstern.
 
 Die Umsetzung hängt von Projektverlauf, technischer Machbarkeit und Finanzierung ab.
 
 ## Partner und Stand
 
-| Partner | Stand |
-|---|---|
-| Deutscher Amateur-Radio-Club (DARC) e. V. | Fachliche Unterstützung |
-| Institut für Seenforschung, Langenargen | Kontakt für die Messungen am See |
-| Rose Plastic | Unterstützung zugesagt. Wunsch: Gehäuse für die Sensoren. Der Umfang hängt von unserer Kostenaufstellung ab. |
-| JT-elektronik GmbH, Lindau | Positive Rückmeldung, persönliches Gespräch als nächster Schritt |
+| Partner                                   | Stand                                                                                                        |
+| ----------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| Deutscher Amateur-Radio-Club (DARC) e. V. | Fachliche Unterstützung                                                                                      |
+| Institut für Seenforschung, Langenargen   | Kontakt für die Messungen am See                                                                             |
+| Rose Plastic                              | Unterstützung zugesagt. Wunsch: Gehäuse für die Sensoren. Der Umfang hängt von unserer Kostenaufstellung ab. |
+| JT-elektronik GmbH, Lindau                | Positive Rückmeldung, persönliches Gespräch als nächster Schritt                                             |
 
 JT-elektronik entwickelt und fertigt Inspektions- und Messsysteme (Kameratechnik, Sensorik,
 Elektronik, Steuerungen, Messdatenverarbeitung). Mögliche Unterstützung:
@@ -46,14 +47,14 @@ Elektronik, Steuerungen, Messdatenverarbeitung). Mögliche Unterstützung:
 
 ## Seiten
 
-| Datei | Inhalt |
-|---|---|
-| `index.html` | Start: Überblick über beide Projekte |
-| `lorawan.html` | Projekt 1: LoRaWAN-Gateway-System |
-| `funkstation.html` | Projekt 2: Funkstation |
-| `ueber-uns.html` | Team, Unterstützung, Kontakt |
-| `kalender.html` | Projektkalender |
-| `impressum.html`, `datenschutz.html`, `404.html` | Rechtliches und Fehlerseite |
+| Datei                                            | Inhalt                               |
+| ------------------------------------------------ | ------------------------------------ |
+| `index.html`                                     | Start: Überblick über beide Projekte |
+| `lorawan.html`                                   | Projekt 1: LoRaWAN-Gateway-System    |
+| `funkstation.html`                               | Projekt 2: Funkstation               |
+| `ueber-uns.html`                                 | Team, Unterstützung, Kontakt         |
+| `kalender.html`                                  | Projektkalender                      |
+| `impressum.html`, `datenschutz.html`, `404.html` | Rechtliches und Fehlerseite          |
 
 ## Aufbau
 
