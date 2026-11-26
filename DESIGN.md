@@ -39,6 +39,9 @@ das Erkennungszeichen des Projekts ist.
 **Abweichung:** Der Skill empfiehlt Geist, Manrope oder Poppins. Archivo und IBM Plex Mono
 bleiben auf Wunsch.
 
+**Abweichung:** Der Skill sieht einen Farbverlauf auf der Hero-Überschrift vor. Auf Wunsch gibt
+es keinen einzigen Verlauf; die Überschrift ist einfarbig Papierweiß.
+
 ## Abstände und Radien
 
 - Abstände nur aus `--space-0` bis `--space-900` (0, 2, 4, 8, 12, 16, 24, 32, 40, 48, 64, 80, 96 px).
